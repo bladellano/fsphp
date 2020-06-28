@@ -18,4 +18,35 @@ echo "<h2>__get</h2>";
 
 echo "<p>O curso {$fsphp->title} da {$fsphp->company} é o melhor curso de PHP do mercado.</p>";
 
-print_r($fsphp);
+#print_r($fsphp);
+
+echo "<h2>__call</h2>";
+$fsphp->notFound("Opss","teste");
+$fsphp->setPrice(1997);
+
+#print_r($fsphp);
+
+echo "<h2>__toString</h2>";
+
+echo $fsphp;
+
+echo "<h2>__unset</h2>";
+
+/*unset(
+    $fsphp->name,
+    $fsphp->price,
+    $fsphp->data,
+    $fsphp->title
+);*/
+
+#print_r($fsphp);
+
+echo "<h2>__isset</h2>";
+
+#isset($fsphp->phone);
+#isset($fsphp->name);
+empty($fsphp->address);
+
+var_dump($fsphp);
+
+
