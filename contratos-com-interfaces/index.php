@@ -1,9 +1,13 @@
 <?php
 
-echo '<pre>';
+
+require __DIR__."/../fullstackphp/fsphp.php";
+
+fullStackPHPClassName("Contrato com interfaces");
+
 require __DIR__."/source/autoload.php";
 
-echo 'Implementação LINE: ', __LINE__,PHP_EOL;
+fullStackPHPClassSession("Implementação",__LINE__);
 $user = new \Source\Contracts\User(
     "Caio",
     "Silva",
@@ -14,12 +18,10 @@ $admin = new \Source\Contracts\UserAdmin(
     "Leite",
     "robsonvleite@upinside.com.br"
 );
-var_dump($user,$admin);
-echo '<hr/>';
+echo '<pre>';
+var_dump($user);
+echo '</pre>';
 
-echo 'Associção LINE: ', __LINE__,PHP_EOL;
-echo '<hr/>';
-
-
-echo 'Dependência LINE: ', __LINE__,PHP_EOL;
-echo '<hr/>';
+echo '<pre>';
+var_dump($admin);
+echo '</pre>';
