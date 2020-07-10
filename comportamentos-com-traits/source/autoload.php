@@ -1,4 +1,4 @@
- <?php
+<?php
 spl_autoload_register(function($class){
     $prefix = "Source\\";
     $baseDir = __DIR__."/";
