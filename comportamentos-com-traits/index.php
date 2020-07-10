@@ -16,14 +16,17 @@ $register = new \Source\Traits\Register(
     $user,
     $address
 );
-echo '<pre>';
-var_dump(
-    $register,
-    $register->getUser(),
-    $register->getAddress(),
-    $register->getUser()->getFirstName()
-);
-echo '</pre>';
+
+debug($register);
+debug($register->getUser());
+debug($register->getAddress());
+debug($register->getUser()->getFirstName());
+//var_dump(
+//    $register,
+//    $register->getUser(),
+//    $register->getAddress(),
+//    $register->getUser()->getFirstName()
+//);
 $cart = new \Source\Traits\Cart();
 $cart->add(1,"Full Stack PHP Developer",1,2000);
 $cart->add(2,"Laravel Developer",2,1000);
@@ -33,6 +36,5 @@ $cart->remove(3,1);
 
 $cart->checkout($user,$address);
 
-echo '<pre>';
-var_dump($cart);
-echo '</pre>';
+debug($cart);
+
