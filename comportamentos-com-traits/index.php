@@ -17,10 +17,10 @@ $register = new \Source\Traits\Register(
     $address
 );
 
-debug($register);
-debug($register->getUser());
-debug($register->getAddress());
-debug($register->getUser()->getFirstName());
+dd($register);
+dd($register->getUser());
+dd($register->getAddress());
+dd($register->getUser()->getFirstName());
 //var_dump(
 //    $register,
 //    $register->getUser(),
@@ -36,5 +36,5 @@ $cart->remove(3,1);
 
 $cart->checkout($user,$address);
 
-debug($cart);
+dd($cart);
 
