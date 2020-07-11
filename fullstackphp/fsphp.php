@@ -66,6 +66,13 @@ function fullStackPHPErrorHandler($error, $message, $file, $line)
     echo "<div class='trigger' style='border-color: var(--{$color}); color:var(--{$color});'>[ Linha {$line} ] {$message}<small>{$file}</small></div>";
 }
 
+function pp($data)
+{
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
+
 function dd($data)
 {
     echo '<pre>';
