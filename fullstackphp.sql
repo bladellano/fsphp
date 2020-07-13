@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 12/07/2020 às 18:56
+-- Tempo de geração: 13/07/2020 às 08:55
 -- Versão do servidor: 10.3.22-MariaDB-1ubuntu1
 -- Versão do PHP: 7.4.3
 
@@ -164,7 +164,14 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `document`, `crea
 (47, 'Luiz', 'Santos', 'luiz72@email.com.br', NULL, '2020-07-12 19:08:01', '2020-07-12 19:09:03'),
 (48, 'Luciano', 'Santos', 'luciano73@email.com.br', NULL, '2020-07-12 19:08:01', '2020-07-12 19:09:03'),
 (49, 'Adir', 'Santos', 'adir74@email.com.br', NULL, '2020-07-12 19:08:01', '2020-07-12 19:09:03'),
-(50, 'Tainan', 'Santos', 'tainan75@email.com.br', NULL, '2020-07-12 19:08:01', '2020-07-12 19:09:03');
+(50, 'Tainan', 'Santos', 'tainan75@email.com.br', NULL, '2020-07-12 19:08:01', '2020-07-12 19:09:03'),
+(112, 'Robson', 'Leite', 'cursos@upinside.com.br', '12345678', '2020-07-13 11:37:25', NULL),
+(113, 'Robson', 'Leite', 'cursos@2upinside.com.br', '12345678', '2020-07-13 11:40:20', NULL),
+(114, 'Robson', 'Leite', 'cursos@22upinside.com.br', '12345678', '2020-07-13 11:43:41', NULL),
+(115, 'Robson', 'Leite', 'cursos@222upinside.com.br', '12345678', '2020-07-13 11:47:29', NULL),
+(116, 'Robson', 'Leite', 'cursos@222wupinside.com.br', '12345678', '2020-07-13 11:47:49', NULL),
+(117, 'Robson', 'Leite', 'cursos@21wupinside.com.br', '12345678', '2020-07-13 11:48:33', NULL),
+(118, 'Robson', 'Leite', 'cursos@231wupinside.com.br', '12345678', '2020-07-13 11:51:55', NULL);
 
 --
 -- Índices de tabelas apagadas
@@ -198,7 +205,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- Restrições para dumps de tabelas
