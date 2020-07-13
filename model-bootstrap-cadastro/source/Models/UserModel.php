@@ -20,7 +20,7 @@ class UserModel extends Model
         $this->first_name = $firstName;
         $this->last_name = $lastName;
         $this->email = $email;
-        $this->documento = $document;
+        $this->document = $document;
         return $this;
     }
 
@@ -56,6 +56,26 @@ class UserModel extends Model
 
     public function save()
     {
+        /*User Update*/
+        if(!empty($this->id)){
+            $userId = $this->id;
+        }
+        /*User Create*/
+        if(empty($this->id)){
+            if($this->find($this->email)){
+                $this->messege = "O e-mail informado já está cadastrado";
+                return null;
+            }
+
+            $userId = $this->create(self::$entity, $this->safe());
+
+            if($this->fail()){
+                $this->messege = "Erro ao cadastrar, verifique os dados";
+            }
+            $this->messege = "Cadastro realizado com sucesso";
+        }
+        $this->data = $this->read("SELECT * FROM users WHERE id = :id","id={$userId}")->fetch();
+        return $this;
 
     }
 
