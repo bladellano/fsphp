@@ -71,8 +71,6 @@ abstract class Model
             $this->fail = $exception;
             return null;
         }
-        #dd($entity);
-        #dd($data);
     }
 
     protected function read(string $select, string $params = null): ?\PDOStatement
@@ -96,9 +94,25 @@ abstract class Model
         }
     }
 
-    protected function update()
+    protected function update(string $entity, array $data, string $terms, string $params):?int
     {
 
+        try {
+            $dateSet = [];
+            foreach ($data as $bind => $value) {
+                $dateSet[] = "{$bind} = :{$bind}";
+            }
+            $dateSet = implode(",",$dateSet);
+            parse_str($params,$params);
+
+            $stmt = Connect::getInstance()->prepare("UPDATE {$entity} SET {$dateSet} WHERE {$terms}");
+            $stmt->execute($this->filter(array_merge($data,$params)));
+            return ($stmt->rowCount() ?? 1);
+
+        }catch (\PDOException $exception) {
+            $this->fail = $exception;
+            return null;
+        }
     }
 
     protected function delete()
